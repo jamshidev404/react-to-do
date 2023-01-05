@@ -1,0 +1,8 @@
+.add-button {
+    padding: 11px 8px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inter";
+    cursor: pointer;
+    margin-right: -2px;
+  }

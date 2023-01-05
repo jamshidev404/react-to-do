@@ -1,0 +1,11 @@
+.input {
+  width: 81%;
+  padding: 11px 8px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Inter";
+  margin-bottom: 20px;
+  outline: none;
+  margin-left: -2px;
+  margin-right: 5px;
+}
