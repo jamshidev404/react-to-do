@@ -1,0 +1,26 @@
+.additions {
+display: flex;
+align-items: center;
+justify-content: end;
+gap: 15px;
+padding: 20px 40px 20px 20px;
+}
+
+.clear {
+ border-radius: 5px;
+ border: none;
+ padding: 5px 8px;
+ cursor: pointer;
+}
+
+.all {
+    
+}
+
+.processing{
+
+}
+
+.compleated {
+
+}
