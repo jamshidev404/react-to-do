@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Add.module.css";
 
-function Add({ todo, setTodo }) {
-
-  
-
-
+function Add({ todo, setTodo, value, setValue, setProcess }) {
   function saveTodo() {
-    setTodo([
+    setValue("");
+    let processLength =
+      [...todo].filter((el) => el.isDone === false).length + 1;
+    setProcess(processLength);
+    return setTodo([
       ...todo,
       {
         title: value,
@@ -19,12 +19,14 @@ function Add({ todo, setTodo }) {
   return (
     <div className={styles.form}>
       <input
-       className={styles.input}
-        placeholder='Enter a task'
+        className={styles.input}
+        placeholder="Enter a task"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={saveTodo}  className={styles.btn}>Add</button>
+      <button onClick={saveTodo} className={styles.btn}>
+        Add
+      </button>
     </div>
   );
 }

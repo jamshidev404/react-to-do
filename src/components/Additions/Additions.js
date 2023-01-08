@@ -1,27 +1,30 @@
 import React from "react";
 import styles from "./Addition.module.css";
 
-function Additions({ todo, setTodo }) {
-  console.log(todo);
-
-  function ClearAll() {}
-
-  function allTasks() {
-    const allTask = todo.length;
-    setTodo(allTask);
-  }
-
-  function Process() {}
-
-  function Completed() {}
-
+function Additions({
+  todo,
+  process,
+  completed,
+  setTodo,
+  setCompleted,
+  setProcess,
+}) {
   return (
     <div>
       <div className={styles.additions}>
-        <button className={styles.clear}>Clear all</button>
-        <div className={styles.all}>All tasks: {todo}</div>
-        <div className={styles.processing}>Process: 0</div>
-        <div className={styles.compleated}>Completed: 0</div>
+        <button
+          className={styles.clear}
+          onClick={() => {
+            setTodo([]);
+            setProcess(0);
+            setCompleted(0);
+          }}
+        >
+          Clear all
+        </button>
+        <div className={styles.all}>All tasks: {todo.length}</div>
+        <div className={styles.processing}>Process: {process}</div>
+        <div className={styles.compleated}>Completed: {completed}</div>
       </div>
     </div>
   );

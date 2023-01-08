@@ -6,15 +6,38 @@ import ToDoList from "./components/List/List";
 import Additions from "./components/Additions/Additions";
 
 function App() {
-  const [todo, setTodo] = useState(0);
-  const [value, setValue] = useState([])
+  const [todo, setTodo] = useState([]);
+  const [value, setValue] = useState([]);
+  const [process, setProcess] = useState(0);
+  const [completed, setCompleted] = useState(0);
+
+  // let processLength = [...todo].filter((el) => el.isDone === false).length + 1;
+  // setProcess(processLength);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Title />
-      <Add todo={todo} setTodo={setTodo} />
-      <ToDoList todo={todo} setTodo={setTodo} />
-      {/* <Additions todo={todo} setTodo={setTodo} /> */}
+      <Add
+        todo={todo}
+        setTodo={setTodo}
+        value={value}
+        setValue={setValue}
+        setProcess={setProcess}
+      />
+      <ToDoList
+        todo={todo}
+        setTodo={setTodo}
+        setProcess={setProcess}
+        setCompleted={setCompleted}
+      />
+      <Additions
+        todo={todo}
+        setTodo={setTodo}
+        process={process}
+        completed={completed}
+        setProcess={setProcess}
+        setCompleted={setCompleted}
+      />
     </div>
   );
 }
